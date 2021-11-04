@@ -1,18 +1,54 @@
-<!DOCTYPE html>
-<html dir='ltr' lang='es'>
-<head>
-<link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css"/>
-
-
-<video class="js-player" controls="" poster="https://bit.ly/3aGmY9R" preload="none">
-  <source src="https://dl.uploadgram.me/60189ce208a03h.mp4" type="video/mp4"></source>
-</video>
-
-
-<script src="https://cdn.plyr.io/3.6.4/plyr.js"></script>
-<script>//<![CDATA[
-const players = Array.from(document.querySelectorAll('.js-player')).map(player => new Plyr(player));
-//]]></script>
-
+<!-- JwPlayer -->
+<script src="https://ssl.p.jwpcdn.com/player/v/8.18.4/jwplayer.js"> </script>
+<script type="text/javascript">jwplayer.key = "W7zSm81+mmIsg7F+fyHRKhF3ggLkTqtGMhvI92kbqf/ysE99";</script>
+<style type="text/css" media="screen">html,body{padding:0;margin:0;height:100%}#megaplay{width:100%!important;height:100%!important;overflow:hidden;background-color:#000}</style>
+<div id="megaplay"></div>
+<script type="text/javascript">
+var player = jwplayer("megaplay");
+player.setup({
+sources: [{
+"file": "uhttps://akamai2-br.cdn.booyah.live/hls/1000006/95417683.m3u8",
+"type": "video\/mp4",
+"label": "1080p"},{
+"file": "https://akamai2-br.cdn.booyah.live/hls/1000006/95417683.m3u8",
+"type": "video\/mp4",
+"label": "720p"}], 
+aspectratio: "16:9",
+startparam: "start",
+primary: "html5",
+autostart: false,
+preload: "auto",
+image: "",
+advertising: {
+client: "vast",
+tag: ""},
+skin: {
+name: "megaplay"},
+logo: {
+file: "https://1.bp.blogspot.com/--tb7VVuYZyA/YL8EGjYYlRI/AAAAAAAADoo/RSIjgYig0VA3VB_lfuzakxNEcMUFqlOPQCLcBGAsYHQ/s0/144F3EED-5233-4763-83C4-0F43D0026F69.jpeg"},
+captions: {
+color: "#f3f368",
+fontSize: 16,
+backgroundOpacity: 0,
+fontfamily: "Helvetica",
+edgeStyle: "raised"},
+tracks: [{
+file: "",
+label: "Español",
+kind: "captions"
+}, ]
+});
+setTimeout(function() {
+        $("#loader").delay(1000).fadeOut("slow");
+        $("#loader-wrapper").delay(1500).fadeOut("slow")
+    }, 2000);
+player.on("setupError", function() {
+swal("Server Error!", "Please contact us to fix it asap. Thank you!", "error")
+});
+player.on("error", function() {
+swal("Server Error!", "Please contact us to fix it asap. Thank you!", "error")
+});
+</script>
+<script src='https://cdn.jsdelivr.net/gh/da2l/host@1/dist/js/wgd-core.min.js'></script>
 </body>
 </html>
